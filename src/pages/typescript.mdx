@@ -1,0 +1,39 @@
+---
+title: TypeScript
+description: Type-safe MDX usage.
+---
+
+import { Callout } from '../components/Callout'
+
+# TypeScript
+
+MDX has first-class TypeScript support.
+
+## Typing MDX components
+
+```tsx
+interface CalloutProps {
+  type: "info" | "tip" | "warning"
+  children: React.ReactNode
+}
+
+export function Callout({ type, children }: CalloutProps) {
+  return <div data-type={type}>{children}</div>
+}
+```
+
+## Declare module for .mdx files
+
+```ts
+// mdx.d.ts
+declare module '*.mdx' {
+  import type { ComponentType } from 'react'
+  const MDXComponent: ComponentType
+  export default MDXComponent
+}
+```
+
+<Callout type="tip">
+  Add `mdx.d.ts` to your `tsconfig.json` includes array to ensure TypeScript
+  picks it up across the entire project.
+</Callout>

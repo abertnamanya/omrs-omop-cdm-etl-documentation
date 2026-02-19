@@ -1,0 +1,31 @@
+---
+title: FAQ
+description: Common MDX questions answered.
+---
+
+# Frequently Asked Questions
+
+## Is MDX the same as Markdown?
+
+MDX is a superset of Markdown. All valid Markdown is valid MDX, but MDX adds
+JSX support on top.
+
+## Do I need React to use MDX?
+
+MDX is React-focused by default, but integrations exist for Preact, Vue
+(via Astro), and Svelte.
+
+## Can I use MDX with Next.js?
+
+Yes! Install `@next/mdx` and configure `next.config.js`. MDX pages are fully
+supported in both the App Router and Pages Router.
+
+## Is MDX good for performance?
+
+Yes. MDX compiles to static React components at build time — there is no
+runtime parsing overhead in production.
+
+## Can I use hooks inside MDX?
+
+Yes, you can define and use React hooks in MDX. However, it's better practice
+to extract complex logic into a dedicated component file.

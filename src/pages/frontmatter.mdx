@@ -1,0 +1,46 @@
+---
+title: Frontmatter & Exports
+date: 2026-01-20
+---
+
+import { Callout } from '../components/Callout'
+
+# Frontmatter & Exports
+
+MDX supports two ways to attach metadata: YAML frontmatter and named exports.
+
+## YAML Frontmatter
+
+```mdx
+---
+title: Getting Started
+description: Learn the basics
+author: Jane Doe
+date: 2026-01-01
+tags: [mdx, docs]
+draft: false
+---
+
+# Getting Started
+```
+
+## Named Exports
+
+Named exports let you expose typed JavaScript values from an MDX file.
+
+```mdx
+export const meta = {
+  readTime: "8 min",
+  difficulty: "intermediate",
+}
+
+Read time: {meta.readTime}
+
+// Import from another file
+import { meta } from './page.mdx'
+```
+
+<Callout type="warning">
+  Frontmatter is not automatically available as a JavaScript variable. Use
+  `remark-frontmatter` + `remark-mdx-frontmatter` to expose it as an export.
+</Callout>

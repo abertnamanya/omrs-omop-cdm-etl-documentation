@@ -1,0 +1,56 @@
+---
+title: MDX Syntax
+tags: [syntax, mdx, jsx]
+---
+
+# MDX Syntax
+
+MDX supports the full CommonMark specification plus JSX.
+
+## Markdown is unchanged
+
+All standard Markdown syntax works exactly as you'd expect.
+
+```mdx
+## A heading
+
+Some paragraph with **bold**, _italic_, and `code`.
+
+- List item one
+- List item two
+
+> A blockquote
+```
+
+## Imports at the top
+
+Place all import statements at the very top of the file, before any
+Markdown content.
+
+```mdx
+import { Chart, Table } from './components'
+import data from './data.json'
+
+# My Document
+
+<Chart data={data.sales} />
+```
+
+## JSX expressions
+
+Use curly braces to embed JavaScript expressions anywhere in your MDX.
+
+```mdx
+export const version = "3.0"
+
+Current version: {version}
+Today: {new Date().toLocaleDateString()}
+```
+
+## Rules & gotchas
+
+1. Imports must come before all Markdown content
+2. JSX components must be closed — use `<Comp />` for self-closing
+3. Use `className` not `class`, `htmlFor` not `for`
+4. Style props take objects: `style={{ color: 'red' }}`
+5. Comments inside JSX use `{/* */}` syntax

@@ -1,0 +1,41 @@
+---
+title: Introduction
+description: Get started with MDX.
+author: docs-team
+date: 2026-01-15
+---
+
+import { Callout } from '../components/Callout'
+
+export const meta = {
+  readTime: '3 min',
+  difficulty: 'beginner',
+}
+
+# Introduction to MDX
+
+<Callout type="info">
+  MDX is an authorable format that lets you use JSX in your Markdown content.
+  Import interactive charts, alerts, or any React component and embed them
+  within your content.
+</Callout>
+
+MDX is a superset of Markdown — everything you know still works. The key
+difference is that you can import and use React components directly inside
+your `.mdx` files.
+
+## Why MDX?
+
+Traditional Markdown is great for static content but falls short when you
+need interactivity. MDX bridges this gap by letting you embed fully-functional
+React components alongside your prose.
+
+## How it works
+
+MDX files are compiled by a bundler plugin at build time. The compiler
+transforms your `.mdx` file into a React component you can import and render
+like any other component — zero runtime overhead.
+
+```bash
+npm install @mdx-js/react @mdx-js/rollup
+```

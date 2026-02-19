@@ -1,0 +1,50 @@
+---
+title: MDX Cheat Sheet
+description: All MDX syntax at a glance.
+---
+
+# MDX Cheat Sheet
+
+A quick reference for all MDX syntax. Bookmark this page.
+
+## File anatomy
+
+```mdx
+---
+title: My Page
+---
+
+// 1. Frontmatter (optional)
+
+import { Comp } from './Comp'
+// 2. Imports
+
+export const meta = { readTime: "3 min" }
+// 3. Exports
+
+# Heading
+
+Markdown prose with **bold** and `code`.
+
+<Comp prop="value" />
+// 4. Markdown + JSX content
+```
+
+## Prop types
+
+| Syntax | Example |
+|---|---|
+| String | `prop="value"` |
+| Expression | `prop={variable}` |
+| Boolean | `disabled` |
+| Spread | `{...props}` |
+| Event | `onClick={() => fn()}` |
+
+## Differences from HTML
+
+| HTML | JSX/MDX |
+|---|---|
+| `class` | `className` |
+| `for` | `htmlFor` |
+| `style="color:red"` | `style={{ color: 'red' }}` |
+| `<!-- comment -->` | `{/* comment */}` |

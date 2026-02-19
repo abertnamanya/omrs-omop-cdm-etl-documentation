@@ -1,0 +1,60 @@
+---
+title: Quick Start
+description: Get up and running with MDX fast.
+readTime: 5 min
+---
+
+import { Callout } from '../components/Callout'
+
+# Quick Start
+
+Get MDX running in your project in under 5 minutes.
+
+## 1. Install dependencies
+
+```bash
+npm install @mdx-js/react @mdx-js/rollup
+```
+
+## 2. Configure your bundler
+
+```js
+// vite.config.js
+import mdx from '@mdx-js/rollup'
+
+export default {
+  plugins: [mdx()]
+}
+```
+
+## 3. Create your first .mdx file
+
+```mdx
+---
+title: Hello MDX
+---
+
+import { Button } from './Button'
+
+# Hello, MDX!
+
+This is **Markdown** with a React component:
+
+<Button onClick={() => alert('Hi!')}>
+  Click me!
+</Button>
+```
+
+## 4. Import and render
+
+```jsx
+import Hello from './hello.mdx'
+
+export default function App() {
+  return <Hello />
+}
+```
+
+<Callout type="tip">
+  That's it! Your .mdx file is now a fully working React component.
+</Callout>
