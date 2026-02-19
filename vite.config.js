@@ -5,8 +5,8 @@ import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
 
 export default defineConfig({
+  base: '/omrs-omop-cdm-etl-documentation/',
   plugins: [
-    // MDX must come before React plugin
     {
       enforce: 'pre',
       ...mdx({
