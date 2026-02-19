@@ -472,7 +472,18 @@ function TocSidebar({ pageId, activeSection }) {
             return (
               <a key={i} href="#"
                 onClick={e => e.preventDefault()}
-                style={{ display: "block", color: isActive ? theme.tocActive : theme.muted, fontSize: "13px", lineHeight: "1.5", padding: "3px 0", paddingLeft: item.startsWith("  ") ? "12px" : "0", textDecoration: "none", fontWeight: isActive ? "600" : "400", borderLeft: isActive ? `2px solid ${theme.tocActive}` : "2px solid transparent", paddingLeft: isActive ? "8px" : "0", transition: "color 0.15s" }}
+               style={{
+  display: "block",
+  color: isActive ? theme.tocActive : theme.muted,
+  fontSize: "13px",
+  lineHeight: "1.5",
+  padding: "3px 0",
+  textDecoration: "none",
+  fontWeight: isActive ? "600" : "400",
+  borderLeft: isActive ? `2px solid ${theme.tocActive}` : "2px solid transparent",
+  paddingLeft: isActive ? "8px" : item.startsWith("  ") ? "12px" : "0",
+  transition: "color 0.15s"
+}}
               >
                 {item.trim()}
               </a>
